@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Black Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#0a0a0a;
+  font-family:'Poppins', sans-serif;
+  color:#fff;
+}
+
+/* Header */
+.header{
+  text-align:center;
+  padding:45px 20px;
+}
+.header h1{
+  font-family:'Playfair Display', serif;
+  color:#d4af37;
+  font-size:2.7rem;
+}
+.header p{
+  color:#aaa;
+  margin-top:8px;
+}
+
+/* Gallery */
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap:25px;
+  padding:40px;
+}
+
+/* Box */
+.box{
+  background:#111;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(212,175,55,0.15);
+  cursor:pointer;
+  transition:0.4s ease;
+}
+.box:hover{
+  transform:translateY(-5px);
+}
+
+/* Image */
+.box img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+/* Caption */
+.text{
+  padding:14px;
+  text-align:center;
+  color:#d4af37;
+  letter-spacing:1px;
+}
+
+/* Popup */
+.popup{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.92);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:100;
+}
+
+.popup-box{
+  background:#111;
+  border-radius:16px;
+  max-width:700px;
+  width:90%;
+  padding:25px;
+  box-shadow:0 0 30px rgba(212,175,55,0.3);
+  animation: zoom 0.4s ease;
+}
+
+.popup-box img{
+  width:100%;
+  border-radius:12px;
+}
+
+.popup-text{
+  margin-top:15px;
+  color:#ccc;
+  line-height:1.6;
+  text-align:center;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:35px;
+  color:#d4af37;
+  cursor:pointer;
+}
+
+/* Animation */
+@keyframes zoom{
+  from{transform:scale(0.8); opacity:0;}
+  to{transform:scale(1); opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Royal Black Gallery</h1>
+  <p>Click an image to read its story</p>
+</div>
+
+<div class="gallery">
+
+  <div class="box" onclick="openPop(this)">
+    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc">
+    <div class="text">Dark Elegance</div>
+    <p class="desc" style="display:none;">
+      This image represents dark elegance and luxury. 
+      The contrast of light and shadow creates a royal and premium feel.
+    </p>
+  </div>
+
+  <div class="box" onclick="openPop(this)">
+    <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
+    <div class="text">Royal Texture</div>
+    <p class="desc" style="display:none;">
+      This texture highlights royal patterns and fine details,
+      showing elegance and artistic design.
+    </p>
+  </div>
+
+  <div class="box" onclick="openPop(this)">
+    <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b">
+    <div class="text">Silent Luxury</div>
+    <p class="desc" style="display:none;">
+      Silent Luxury reflects simplicity with class.
+      It shows how minimal design can still feel premium.
+    </p>
+  </div> 
+
+  <div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1517816743773-6e0fd518b4a6">
+  <div class="text">Royal Architecture</div>
+  <p class="desc" style="display:none;">
+    This image highlights royal architecture with strong structure and symmetry,
+    symbolizing power, stability, and heritage.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+  <div class="text">Luxury Nature</div>
+  <p class="desc" style="display:none;">
+    Luxury Nature represents calmness and elegance,
+    showing how natural beauty blends with a royal theme.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d">
+  <div class="text">Classic Style</div>
+  <p class="desc" style="display:none;">
+    This image reflects classic style and timeless fashion,
+    giving a premium and graceful appearance.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6">
+  <div class="text">Golden Details</div>
+  <p class="desc" style="display:none;">
+    Golden details symbolize richness and perfection,
+    adding a luxurious and royal finishing touch.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c">
+  <div class="text">Modern Royalty</div>
+  <p class="desc" style="display:none;">
+    Modern Royalty shows how contemporary design
+    can still maintain elegance and royal standards.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
+  <div class="text">Dark Serenity</div>
+  <p class="desc" style="display:none;">
+    Dark Serenity represents peace and depth,
+    creating a calm and thoughtful royal mood.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+  <div class="text">Royal Corridor</div>
+  <p class="desc" style="display:none;">
+    A long royal corridor symbolizing journey, depth, and timeless elegance.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+  <div class="text">Elegant Fabric</div>
+  <p class="desc" style="display:none;">
+    Fine textures and folds that represent luxury, comfort, and premium design.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee">
+  <div class="text">Golden Light</div>
+  <p class="desc" style="display:none;">
+    Warm golden light reflecting prosperity and a calm royal atmosphere.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66">
+  <div class="text">Silent Hall</div>
+  <p class="desc" style="display:none;">
+    A silent hall that expresses peace, order, and classic royal heritage.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="black marble.jpeg">
+  <div class="text">Dark Marble</div>
+  <p class="desc" style="display:none;">
+    Dark marble textures showing strength, richness, and refined beauty.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29">
+  <div class="text">Royal Nature</div>
+  <p class="desc" style="display:none;">
+    Nature blended with luxury, creating a balanced and royal visual feel.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="luxury.webp">
+  <div class="text">Luxury Interior</div>
+  <p class="desc" style="display:none;">
+    A luxury interior design that highlights comfort, class, and elegance.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+  <div class="text">Golden Art</div>
+  <p class="desc" style="display:none;">
+    Artistic golden elements representing creativity and royal craftsmanship.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439">
+  <div class="text">Classic Shadow</div>
+  <p class="desc" style="display:none;">
+    Light and shadow working together to form a classic, premium look.
+  </p>
+</div>
+
+<div class="box" onclick="openPop(this)">
+  <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7">
+  <div class="text">Royal Balance</div>
+  <p class="desc" style="display:none;">
+    Perfect balance of simplicity and luxury, showing royal design principles.
+  </p>
+</div>
+
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+  <span class="close" onclick="closePop()">&times;</span>
+  <div class="popup-box">
+    <img id="popImg">
+    <div class="popup-text" id="popText"></div>
+  </div>
+</div>
+
+<script>
+function openPop(box){
+  document.getElementById("popup").style.display="flex";
+  document.getElementById("popImg").src = box.querySelector("img").src;
+  document.getElementById("popText").innerText = box.querySelector(".desc").innerText;
+}
+
+function closePop(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
